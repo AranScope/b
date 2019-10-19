@@ -8,6 +8,6 @@ import (
 
 func Init() {
 	router := httprouter.New()
-	router.GET("/posts/:id", HandleGetPosts)
+	router.GET("/posts", HandleGetPosts)
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
