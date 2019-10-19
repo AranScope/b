@@ -1,4 +1,10 @@
-CREATE TABLE IF NOT EXISTS posts {
+CREATE KEYSPACE IF NOT EXISTS blog
+WITH REPLICATION = {
+    'class': 'SimpleStrategy',
+    'replication_factor' : 1
+};
+
+CREATE TABLE IF NOT EXISTS blog.posts (
     id text,
     title text,
     body text,
@@ -6,5 +12,5 @@ CREATE TABLE IF NOT EXISTS posts {
     created timestamp,
     updated timestamp,
     PRIMARY KEY ((id))
-}
+);
 
